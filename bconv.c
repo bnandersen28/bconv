@@ -66,7 +66,7 @@ void print_bases (short input_val, char mode) // print out base values and str f
     printf("*  Base Values:        Input Mode: %s *\n",modestring); //modestring not correctly converting
     printf("*    Hex     :  %04hX                   *\n",input_val);
     printf("*    Octal   :  %06ho                 *\n",input_val);
-    printf("*    Decimal :  %hd                      *\n",input_val);
+    printf("*    Decimal :  %-6hd                 *\n",input_val);
     printf("****************************************\n");
     printf("\n"); 
 
@@ -106,7 +106,7 @@ while (!valid){
     char valid_input[7] = "OHDCSQ";
     if (strlen(input)!= 1|| !strchr(valid_input, mode)) 
     {
-        printf("Invalid input: %s. Try again\n",input);
+        printf("Invalid input: %s\n",input);
         valid = 0; 
 
     }
@@ -128,29 +128,26 @@ int main (void) // main menu loop; execute option or call
         switch(print_menu())
         {
             case 'O':
-                printf("Option: O Octal Mode\n");
                 mode='O';
+                printf("Mode: Octal\n");
                 break;
             
             case 'H':
-                printf("Option: H Hexadecimal Mode\n"); 
+                printf("Mode: Hexadecimal\n"); 
                 mode='H';
                 break;
             case 'D':
-                printf("Option: D Decimal Mode\n");
+                printf("Mode: Decimal\n");
                 mode='D';
                 break;
             case 'C': 
-                printf("Option: C (Clear value)\n");
                 input_val = 0;
                 break;
             case 'S':
-                printf("Option: S (Set value)\n");
                 input_val = get_operand(mode);
                 print_bases(input_val,mode);
                 break;
             case 'Q': 
-                printf("Option Q (Quit program)\n");
                 quit = 1;
                 break;
             default:
