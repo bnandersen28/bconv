@@ -18,17 +18,17 @@ short get_operand (char mode) // read in numeric value in mode; return value
         case 'O': 
             printf("Enter octal value: ");
             scanf("%ho",&input_val);
-            printf("%o\n", input_val);
+            printf("%o\n\n", input_val);
             break;
         case 'H':
             printf("Enter hex value: ");
             scanf("%hx", &input_val);
-            printf("%x\n", input_val);
+            printf("%x\n\n", input_val);
             break;
         case 'D':
             printf("Enter decimal value: ");
             scanf("%hd", &input_val);
-            printf("%d\n", input_val);
+            printf("%d\n\n", input_val);
             break;
         default:
             break; 
