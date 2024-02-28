@@ -16,19 +16,19 @@ short get_operand (char mode) // read in numeric value in mode; return value
     switch(mode)
     {
         case 'O': 
-            printf("Enter value in Octal mode\n");
+            printf("Enter octal value: ");
             scanf("%ho",&input_val);
-            printf("Value = %o\n", input_val);
+            printf("%o\n", input_val);
             break;
         case 'H':
-            printf("Enter value in Hexadecimal mode\n");
+            printf("Enter hexadecimal value: ");
             scanf("%hx", &input_val);
-            printf("Value = %x\n", input_val);
+            printf("%x\n", input_val);
             break;
         case 'D':
-            printf("Enter value in Decimal mode\n");
+            printf("Enter decimal value: ");
             scanf("%hd", &input_val);
-            printf("Value = %d\n", input_val);
+            printf("%d\n", input_val);
             break;
         default:
             break; 
@@ -106,7 +106,7 @@ while (!valid){
     char valid_input[7] = "OHDCSQ";
     if (strlen(input)!= 1|| !strchr(valid_input, mode)) 
     {
-        printf("Invalid input: %s\n",input);
+        printf("\nInvalid option: %s\n",input);
         valid = 0; 
 
     }
@@ -129,19 +129,20 @@ int main (void) // main menu loop; execute option or call
         {
             case 'O':
                 mode='O';
-                printf("Mode: Octal\n");
+                printf("Mode: Octal\n\n");
                 break;
             
             case 'H':
-                printf("Mode: Hexadecimal\n"); 
+                printf("Mode: Hexadecimal\n\n"); 
                 mode='H';
                 break;
             case 'D':
-                printf("Mode: Decimal\n");
+                printf("Mode: Decimal\n\n");
                 mode='D';
                 break;
             case 'C': 
                 input_val = 0;
+                printf("\n");
                 break;
             case 'S':
                 input_val = get_operand(mode);
