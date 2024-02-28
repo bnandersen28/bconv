@@ -21,7 +21,7 @@ short get_operand (char mode) // read in numeric value in mode; return value
             printf("%o\n", input_val);
             break;
         case 'H':
-            printf("Enter hexadecimal value: ");
+            printf("Enter hex value: ");
             scanf("%hx", &input_val);
             printf("%x\n", input_val);
             break;
@@ -146,7 +146,6 @@ int main (void) // main menu loop; execute option or call
                 break;
             case 'S':
                 input_val = get_operand(mode);
-                print_bases(input_val,mode);
                 break;
             case 'Q': 
                 quit = 1;
