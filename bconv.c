@@ -106,7 +106,7 @@ while (!valid){
     char valid_input[7] = "OHDCSQ";
     if (strlen(input)!= 1|| !strchr(valid_input, mode)) 
     {
-        printf("\nInvalid option: %s\n",input);
+        printf("\nInvalid option: %s\n\n",input);
         valid = 0; 
 
     }
